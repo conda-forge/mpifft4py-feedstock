@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pushd $SRC_DIR/tests
+pushd tests
 
 if [ "$(uname)" == "Darwin" ]; then
     python -b -m pytest

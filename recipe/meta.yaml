@@ -30,6 +30,9 @@ requirements:
     - pyfftw
 
 test:
+  source_files:
+    - tests
+
   requires:
     - pytest
 
