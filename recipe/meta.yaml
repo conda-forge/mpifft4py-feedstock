@@ -1,5 +1,5 @@
 {% set name = "mpiFFT4py" %}
-{% set version = "1.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/spectralDNS/{{ name }}/archive/{{ name }}-{{ version }}.tar.gz
-  sha256: 875fcae6df37dfb1929490e73eb58d79fd0edb9b1a823eda80838af51fb1fd15
+  sha256: e7889a226287116cc4fd268ae2fbe8226cc217cbe47d948858c36cb30894ce8a
 
 build:
   skip: true  # [win]
