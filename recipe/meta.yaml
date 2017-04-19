@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/spectralDNS/{{ name }}/archive/{{ name }}-{{ version }}.tar.gz
-  sha256: e7889a226287116cc4fd268ae2fbe8226cc217cbe47d948858c36cb30894ce8a
+  sha256: 09fa43762dd6d818bf9936c966f09954476d93d4a43b92dd39f2ae29dcea6c2c
 
 build:
   skip: true  # [win]
