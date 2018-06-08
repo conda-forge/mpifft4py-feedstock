@@ -19,11 +19,13 @@ requirements:
     - toolchain
     - python
     - cython
-    - numpy x.x
+
+  host:
+    - numpy 1.12.*
 
   run:
     - python
-    - numpy x.x
+    - {{ pin_compatible('numpy') }}
     - scipy
     - mpi4py
     - cython
