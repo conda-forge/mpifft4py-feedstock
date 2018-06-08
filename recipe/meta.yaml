@@ -21,7 +21,7 @@ requirements:
     - cython
 
   host:
-    - numpy 1.12.*
+    - numpy
 
   run:
     - python
