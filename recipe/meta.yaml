@@ -1,5 +1,5 @@
 {% set name = "mpiFFT4py" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,22 +8,24 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/spectralDNS/{{ name }}/archive/{{ name }}-{{ version }}.tar.gz
-  sha256: 5d2bc067123b3b4d068bc85bccd693aa7287600d8c34c079ea1ca069342f9b58
+  sha256: 2b67ed6fa6c98aa9591ac51afb6a815c3a401b85a4d5d9070e20865d27162fba
 
 build:
   skip: true  # [win]
-  number: 3
+  number: 0
 
 requirements:
   build:
     - toolchain
     - python
     - cython
-    - numpy x.x
+
+  host:
+    - numpy
 
   run:
     - python
-    - numpy x.x
+    - {{ pin_compatible('numpy') }}
     - scipy
     - mpi4py
     - cython
