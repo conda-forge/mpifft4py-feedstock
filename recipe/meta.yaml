@@ -16,14 +16,15 @@ build:
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
+  host:
     - python
     - cython
-    - numpy x.x
+    - numpy
 
   run:
     - python
-    - numpy x.x
+    - {{ pin_compatible('numpy') }}
     - scipy
     - mpi4py
     - cython
