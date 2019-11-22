@@ -1,41 +1,36 @@
-{% set name = "mpiFFT4py" %}
 {% set version = "1.0.2" %}
 
 package:
-  name: {{ name|lower }}
+  name: mpifft4py
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/spectralDNS/{{ name }}/archive/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/spectralDNS/mpiFFT4py/archive/mpiFFT4py-{{ version }}.tar.gz
   sha256: 5d2bc067123b3b4d068bc85bccd693aa7287600d8c34c079ea1ca069342f9b58
 
 build:
-  skip: true  # [win]
   number: 3
+  skip: true  # [win]
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
+  host:
     - python
     - cython
-    - numpy x.x
-
+    - numpy
+    - pip
   run:
     - python
-    - numpy x.x
+    - {{ pin_compatible('numpy') }}
     - scipy
     - mpi4py
-    - cython
     - pyfftw
 
 test:
-  source_files:
-    - tests
-
   requires:
     - pytest
-
   imports:
     - mpiFFT4py
 
